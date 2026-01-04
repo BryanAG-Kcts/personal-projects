@@ -1,0 +1,55 @@
+.bgPolygonal {
+  background: url('/images/herobg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .backGroundMove {
+    animation: backGroundMove infinite linear 20s;
+    -webkit-animation: backGroundMove infinite linear 20s;
+  }
+}
+
+@keyframes backGroundMove {
+  0% {
+    background-position: 0% 0%;
+    background-size: 170%;
+  }
+  20% {
+    background-position: 50% 50%;
+    background-size: 200%;
+  }
+  20.00001% {
+    background-position: 20% 20%;
+    background-size: 200%;
+  }
+  40% {
+    background-position: 40% 40%;
+    background-size: 200%;
+  }
+  40.00001% {
+    background-position: 60% 20%;
+    background-size: 200%;
+  }
+  60% {
+    background-position: 80% 20%;
+    background-size: 200%;
+  }
+  60.00001% {
+    background-position: 60% 60%;
+    background-size: 300%;
+  }
+  80% {
+    background-position: 80% 80%;
+    background-size: 300%;
+  }
+  80.00001% {
+    background-position: 50% 50%;
+    background-size: 200%;
+  }
+  100% {
+    background-position: 80% 80%;
+    background-size: 200%;
+  }
+}

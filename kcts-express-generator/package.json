@@ -1,0 +1,47 @@
+{
+  "name": "kcts-express-generator",
+  "version": "3.0.2",
+  "description": "A simple express project generator",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "pack": "pnpm run build && npm pack",
+    "publish": "pnpm run build && npm publish"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.14.10",
+    "ts-node": "^10.9.2",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "chalk": "4.1.2",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^10.0.1"
+  },
+  "keywords": [
+    "project",
+    "generator",
+    "framework",
+    "express",
+    "typescript",
+    "node"
+  ],
+  "author": "BryanAG-kcts",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/BryanAG-Kcts/kcts-express-generator",
+    "type": "git"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/ts-standard/eslintrc.json",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
+  },
+  "bin": {
+    "kcts-generator": "build/index.js"
+  }
+}

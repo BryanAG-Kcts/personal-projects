@@ -1,0 +1,141 @@
+.dotFall {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  animation-fill-mode: both;
+}
+
+.starFall {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.circleFall {
+  border-radius: 50%;
+}
+
+.pentagonFall {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.triangleFall {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.smallFall {
+  width: 10px;
+  height: 10px;
+}
+
+.mediumFall {
+  width: 12px;
+  height: 12px;
+}
+
+.largeFall {
+  width: 15px;
+  height: 15px;
+}
+
+.blue-1Fall {
+  @apply bg-gradient-to-r from-violet-600 to-indigo-600;
+}
+
+.blue-2Fall {
+  @apply bg-gradient-to-r from-teal-200 to-teal-500;
+}
+
+.green-1Fall {
+  @apply bg-gradient-to-r from-teal-700 to-green-500;
+}
+
+.green-2Fall {
+  @apply bg-gradient-to-r from-emerald-500 to-green-700;
+}
+
+.slowFall {
+  animation-duration: 1s;
+}
+
+.fastFall {
+  animation-duration: 800ms;
+}
+
+.fall-1 {
+  animation-name: fall-1;
+}
+.fall-2 {
+  animation-name: fall-2;
+}
+.fall-3 {
+  animation-name: fall-3;
+}
+
+@keyframes fall-1 {
+  0% {
+    transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg)
+      scale(0.25);
+    opacity: 0;
+  }
+
+  5% {
+    transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg)
+      rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg)
+      rotateZ(90deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-2 {
+  0% {
+    transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg)
+      scale(0.25);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-3 {
+  0% {
+    transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg)
+      scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Inspiration and animations thanks to Hyperplexed*/

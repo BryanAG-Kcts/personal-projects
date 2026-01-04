@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ligth-beige : #ffe8d6
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--ligth-beige);
+}
+
+body, body * {
+  font-family: Quick;
+  font-weight: 700;
+}
+
+.modalWinner {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@font-face {
+  font-family: Quick;
+  src: url("fonts/Quicksand_wght.ttf");
+}

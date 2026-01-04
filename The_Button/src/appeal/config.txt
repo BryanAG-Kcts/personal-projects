@@ -1,0 +1,91 @@
+[
+    [
+        "Color del botón",
+        "Modo oscuro",
+        "Ocultar porcentaje",
+        "Ocultar total",
+        "Ocultar fallo",
+        "Créditos",
+        "Atrás"
+    ],
+    [
+        {
+            "darkColor" : "--dark-Green",
+            "lightColor" : "--light-Green"
+        },
+        {
+            "darkColor" : "--dark-Red",
+            "lightColor" : "--light-Red"
+        },
+        {
+            "darkColor" : "--dark-Blue",
+            "lightColor" : "--light-Blue"
+        },
+        {
+            "darkColor" : "--dark-Yellow",
+            "lightColor" : "--light-Yellow"
+        },
+        {
+            "darkColor" : "--dark-Orange",
+            "lightColor" : "--light-Orange"
+        },
+        {
+            "darkColor" : "--dark-Violet",
+            "lightColor" : "--light-Violet"
+        },
+        {
+            "darkColor" : "--dark-Turquoise",
+            "lightColor" : "--light-Turquoise"
+        },
+        {
+            "darkColor" : "--dark-Bronze",
+            "lightColor" : "--light-Bronze"
+        },
+        {
+            "darkColor" : "--dark-Silver",
+            "lightColor" : "--light-Silver"
+        },
+        {
+            "darkColor" : "--dark-Gold",
+            "lightColor" : "--light-Gold"
+        }
+    ],
+    [
+        {
+            "name" : "Kactuswow",
+            "desc" : "Desarollador de la web",
+            "link" : "https://github.com/BryanAG-Kcts"
+        },
+        {
+            "name" : "Elendow",
+            "desc" : "Desarollador del videojuego",
+            "link" : "https://store.steampowered.com/app/1999740/THE_BUTTON_by_Elendow/"
+        },
+        {
+            "name" : "coolors.com",
+            "desc" : "Colores",
+            "link" : "https://coolors.co"
+        },
+        {
+            "name" : "HyperColor.com",
+            "desc" : "Colores",
+            "link" : "https://hypercolor.dev"
+        },
+        {
+            "name" : "Pixabay.com",
+            "desc" : "Sonidos y música",
+            "link" : "https://pixabay.com/es/"
+        },
+        {
+            "name" : "FontAwesome.com",
+            "desc" : "Iconos",
+            "link" : "https://fontawesome.com"
+        },
+        {
+            "name" : "Repositorio en github",
+            "desc" : "Apoya el Repositorio !!! 🌵",
+            "link" : "https://github.com/BryanAG-Kcts/The_Button"
+        }
+    ]
+    
+]

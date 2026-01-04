@@ -1,0 +1,23 @@
+.npmPackage {
+    background: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.npmPackage h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.npmPackage button {
+    background: var(--bg-primary);
+}

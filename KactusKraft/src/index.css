@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+body {
+  height: 100vh;
+}
+#root {
+  height: 100%;
+}
+
+.pointerInGame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  opacity: 0.3;
+}
+
+.modalTextures {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #bbb;
+  border-radius: 5px;
+}
+
+.modalImgContainer img {
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid black;
+  width: 100px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.modalImgContainer {
+  display: flex;
+  position: relative;
+  background: #ededed;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.modalImgContainer p {
+  font-weight: bold;
+  position: absolute;
+  top: -15px;
+  right: -5px;
+}

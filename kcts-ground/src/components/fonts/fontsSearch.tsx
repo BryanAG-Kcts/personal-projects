@@ -46,7 +46,7 @@ interface Props {
 export const FontButton = ({ font }: Props): JSX.Element => {
   const { category, family, lastModified, variants, version, subsets, files } = font
   const { replace } = useRouter()
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams().toString()
   const params = new URLSearchParams(searchParams)
 
   function addFont (e: MouseEvent<HTMLButtonElement>): void {

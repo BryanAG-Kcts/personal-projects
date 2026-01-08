@@ -36,7 +36,7 @@ export const NpmPackage = ({ pkg, match }: PropNpmPackage): JSX.Element => {
   const isExactMatch = pkg.name.toLowerCase() === match.toLowerCase() ? '(Búsqueda exacta)' : ''
   const { selectModulePackage, query } = usePackage()
   const searchParams = useSearchParams()
-  const params = new URLSearchParams(searchParams)
+  const params = new URLSearchParams(searchParams.toString())
   const { replace } = useRouter()
   const pathName = usePathname()
 

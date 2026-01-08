@@ -10,7 +10,7 @@ export const SourceCode = (): JSX.Element => {
   const searchParams = useSearchParams()
   const pathName = usePathname()
   const { replace } = useRouter()
-  const params = new URLSearchParams(searchParams)
+  const params = new URLSearchParams(searchParams.toString())
 
   const handleQueryParams: HandleQueryParams = (query, value = '') => {
     const decode = btoa(value)

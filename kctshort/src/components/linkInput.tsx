@@ -1,6 +1,7 @@
 'use client'
-import { ArrowDownRight, Copy } from 'lucide-react'
+import { ArrowDownRight, Copy, InfoIcon } from 'lucide-react'
 import { type FormEvent, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 import { post } from '@/constants/fetch'
 import { isValidUrl } from '@/constants/validators'
 
@@ -8,31 +9,41 @@ export function LinkInput() {
   const [link, setLink] = useState('')
   const [shorten, setShorten] = useState({
     urlShorted: '',
-    qr: ''
+    qr: null
   })
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     if (!isValidUrl(link)) {
-      alert('Please enter a valid URL.')
+      toast('Please enter a valid URL.')
       return
     }
 
-    const response = await post('/api/url', { url: link })
+    const response = await post('/url', { url: link }).catch(() => null)
+    if (!response || response.error) {
+      toast('An error occurred while shortening the URL.')
+      return
+    }
+
     setShorten(response)
+    toast('URL shortened successfully!')
   }
 
   async function autoFillLink() {
     const text = await navigator.clipboard.readText().catch(() => null)
-    text && setLink(text)
+    if (text) {
+      setLink(text)
+      toast('Link pasted from clipboard!')
+    }
   }
 
   async function copyToClipboard() {
     await navigator.clipboard.writeText(shorten.urlShorted).catch(() => null)
+    toast('Shortened link copied to clipboard!')
   }
 
   return (
-    <main>
+    <main className='flex flex-col gap-4'>
       <form onSubmit={handleSubmit} className='flex gap-4 w-full py-4'>
         <input
           className='text-center placeholder:underline flex-1 min-w-0'
@@ -53,8 +64,11 @@ export function LinkInput() {
       </form>
 
       {shorten.urlShorted && (
-        <div className='flex flex-col'>
-          <img className='rounded' src={shorten.qr} alt='QR Code' />
+        <div className='flex flex-col gap-2'>
+          <p>Here's your shortened link</p>
+          {shorten.qr && (
+            <img className='rounded' src={shorten.qr} alt='QR Code' />
+          )}
 
           <div className='flex gap-4 py-4 items-center'>
             <p className='text-center flex-1'>{shorten.urlShorted}</p>
@@ -70,6 +84,12 @@ export function LinkInput() {
           </div>
         </div>
       )}
+
+      <ToastContainer
+        theme='dark'
+        position='bottom-right'
+        icon={<InfoIcon />}
+      />
     </main>
   )
 }

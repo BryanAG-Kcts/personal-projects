@@ -7,16 +7,17 @@ import { environment } from '@/constants/environment'
 export async function POST(request: NextRequest) {
   const host = request.headers.get('host')
   const protocol = host?.includes('localhost') ? 'http' : 'https'
-  const { url } = await request.json()
+  const { url, key } = await request.json()
   const id = nanoid(8)
 
   const sql = neon(environment.db)
   const urlShorted = `${protocol}://${host}/${id}/`
-  const data =
-    await sql`INSERT INTO urls (id, url, expire_date) VALUES (${id}, ${url}, CURRENT_DATE + INTERVAL '3 days')`.catch(
-      () => null
-    )
+  const isPersistent = key === environment.persistenceKeySecret
+  const query = isPersistent
+    ? sql`INSERT INTO urls (id, url, expire_date) VALUES (${id}, ${url}, NULL)`
+    : sql`INSERT INTO urls (id, url, expire_date) VALUES (${id}, ${url}, CURRENT_DATE + INTERVAL '3 days')`
 
+  const data = await query.catch(() => null)
   if (!data) {
     return NextResponse.json(
       { error: 'Failed to shorten URL.' },
@@ -27,7 +28,6 @@ export async function POST(request: NextRequest) {
   const qr = await qrcode.toDataURL(urlShorted).catch(() => null)
   return NextResponse.json({
     urlShorted,
-    qr,
-    data
+    qr
   })
 }

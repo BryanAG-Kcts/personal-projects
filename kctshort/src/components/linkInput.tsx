@@ -19,12 +19,16 @@ export function LinkInput() {
       return
     }
 
-    const response = await post('/url', { url: link }).catch(() => null)
+    const persistenceKey = event.currentTarget['persistence-key'].value
+    const response = await post('/url', {
+      url: link,
+      key: persistenceKey
+    }).catch(() => null)
+
     if (!response || response.error) {
       toast('An error occurred while shortening the URL.')
       return
     }
-
     setShorten(response)
     toast('URL shortened successfully!')
   }
@@ -52,6 +56,13 @@ export function LinkInput() {
           value={link}
           onChange={(e) => setLink(e.target.value)}
           onFocus={autoFillLink}
+        />
+
+        <input
+          className='placeholder:underline absolute top-0 left-0 m-2'
+          type='text'
+          placeholder='Your key to persistent links (optional)'
+          name='persistence-key'
         />
 
         <button

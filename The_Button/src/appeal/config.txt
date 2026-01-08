@@ -53,12 +53,12 @@
     [
         {
             "name" : "Kactuswow",
-            "desc" : "Desarollador de la web",
+            "desc" : "Desarrollador de la web",
             "link" : "https://github.com/BryanAG-Kcts"
         },
         {
             "name" : "Elendow",
-            "desc" : "Desarollador del videojuego",
+            "desc" : "Desarrollador del videojuego",
             "link" : "https://store.steampowered.com/app/1999740/THE_BUTTON_by_Elendow/"
         },
         {
@@ -82,7 +82,7 @@
             "link" : "https://fontawesome.com"
         },
         {
-            "name" : "Repositorio en github",
+            "name" : "Repositorio en GitHub",
             "desc" : "Apoya el Repositorio !!! 🌵",
             "link" : "https://github.com/BryanAG-Kcts/The_Button"
         }
